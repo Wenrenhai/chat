@@ -1,0 +1,13 @@
+{
+  "index.html": {
+    "refer": [
+      "page/registered.html"
+    ]
+  },
+  "page/registered.html": {
+    "refer": [
+      "page/registered.html",
+      "page/validation.html"
+    ]
+  }
+}
