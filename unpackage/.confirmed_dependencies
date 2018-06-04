@@ -1,18 +1,26 @@
 {
-	"index.html": {
-		"refer": [
-			"page/registered.html"
-		]
-	},
-	"page/registered.html": {
-		"refer": [
-			"page/registered.html",
-			"page/validation.html"
-		]
-	},
-	"page/validation.html": {
-		"refer": [
-			"page/validation.html"
-		]
-	}
+  "index.html": {
+    "refer": [
+      "page/registered.html"
+    ],
+    "resources": [
+      "js/three/three.min.js",
+      "js/common.js",
+      "js/three/Detector.js",
+      "js/three/GPUComputationRenderer.js"
+    ]
+  },
+  "page/registered.html": {
+    "refer": [
+      "page/registered.html",
+      "page/validation.html"
+    ],
+    "resources": []
+  },
+  "page/validation.html": {
+    "refer": [
+      "page/validation.html"
+    ],
+    "resources": []
+  }
 }
