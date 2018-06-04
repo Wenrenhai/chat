@@ -135,22 +135,14 @@
 			"index.html": {
 				"resources": [],
 				"refer": [
-					"page/registered.html"
+					"page/login.html"
 				],
 				"priority": 0
 			},
-			"page/registered.html": {
+			"page/login.html": {
 				"resources": [],
 				"refer": [
-					"page/registered.html",
-					"page/validation.html"
-				],
-				"priority": 0
-			},
-			"page/validation.html": {
-				"resources": [],
-				"refer": [
-					"page/validation.html"
+					"page/register.html"
 				],
 				"priority": 0
 			}
@@ -159,7 +151,9 @@
 			"resources": [
 				"js/common.js",
 				"js/mui.min.js",
+				"css/app.css",
 				"fonts/mui.ttf",
+				"js/jquery/jquery-3.2.1.min.js",
 				"css/mui.min.css",
 				"js/mui.js",
 				"css/mui.css"

@@ -3,9 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="js/mui.min.js"></script>
     <title>index</title>
+
 </head>
 <body>
-    
+	<script>
+		mui.plusReady(function(){
+			plus.screen.lockOrientation("portrait-primary");
+			
+			//读取本地数据判断是否登录
+			var token = plus.storage.getItem("token");
+			if(token){
+				
+			}else{
+				mui.openWindow({
+					id: 'login',
+					url: 'page/login.html',
+					styles: {
+						popGesture: "none"
+					},
+					show: {
+						aniShow: 'none'
+					},
+					waiting: {
+						autoShow: false
+					}
+				});
+			}
+			
+			mui.back=function(){
+				console.log(1);
+			}
+		});
+	</script>
 </body>
 </html>

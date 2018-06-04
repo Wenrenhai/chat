@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/fontawesome-all.min.css" />
+		<link rel="stylesheet" href="../css/app.css" />
+		<script src="../js/mui.min.js"></script>
+	</head>
+
+	<body>
+		<header class="chat_header">
+			<div class="chat_header_left"></div>
+			<div class="chat_header_title">登录</div>	
+			<div class="chat_header_right" url="register.html">注册</div>
+		</header>
+		<div>
+			<form class="mui-input-group">
+			    <div class="mui-input-row">
+			        <label>账号</label>
+			    <input type="text" class="mui-input-clear" placeholder="请输入账号">
+			    </div>
+			    <div class="mui-input-row">
+			        <label>密码</label>
+			        <input type="password" class="mui-input-password" placeholder="请输入密码">
+			    </div>
+			    <div class="mui-button-row">
+			        <button type="button" class="mui-btn mui-btn-primary" >确认</button>
+			        <button type="button" class="mui-btn mui-btn-danger" >取消</button>
+			    </div>
+			</form>
+		</div>
+		<script src="../js/app.js"></script>
+		<script>
+			mui.plusReady(function(){
+				
+				//设置状态栏字体颜色
+				plus.navigator.setStatusBarStyle('light');
+				
+				//在登录界面按back就退出app
+				mui.back=function(){
+					plus.runtime.quit();
+				}
+			});
+		</script>
+	</body>
+
+</html>

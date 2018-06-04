@@ -1,18 +1,27 @@
 {
-	"index.html": {
-		"refer": [
-			"page/registered.html"
-		]
-	},
-	"page/registered.html": {
-		"refer": [
-			"page/registered.html",
-			"page/validation.html"
-		]
-	},
-	"page/validation.html": {
-		"refer": [
-			"page/validation.html"
-		]
-	}
+  "index.html": {
+    "refer": [
+      "page/registered.html",
+      "page/login.html"
+    ],
+    "resources": []
+  },
+  "page/registered.html": {
+    "refer": [
+      "page/registered.html",
+      "page/validation.html"
+    ],
+    "resources": []
+  },
+  "page/validation.html": {
+    "refer": [
+      "page/validation.html"
+    ],
+    "resources": []
+  },
+  "page/login.html": {
+    "refer": [
+      "page/register.html"
+    ]
+  }
 }
