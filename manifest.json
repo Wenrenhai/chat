@@ -146,6 +146,13 @@
 					"page/validation.html"
 				],
 				"priority": 0
+			},
+			"page/validation.html": {
+				"resources": [],
+				"refer": [
+					"page/validation.html"
+				],
+				"priority": 0
 			}
 		},
 		"idle": {

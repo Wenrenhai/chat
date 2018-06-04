@@ -13,21 +13,74 @@
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">注册</a>
-			<h1 class="mui-title">输入验证码</h1>
+			<h1 class="mui-title" style="line-height:50px;height:50px;">输入验证码</h1>
 		</header>
 		<div class="mui-content">
-			<form id="registered_form">
+			<form id="validation_form">
 				<div class="mui-input-row">
-					<label>60</label>
-			        <input type="text" class="mui-input-clear" placeholder="请输入验证码">
+					<label id='resendTime'>60</label>
+			        <input id="code" type="text" class="mui-input-clear" placeholder="请输入验证码">
 			    </div>
 			    <div class="mui-button-row">
-					<button id="registered_form_btn" type="submit" class="mui-btn mui-btn-success mui-btn-outlined" style="width:80%;">下一步</button>
+					<button id="validation_btn" type="submit" class="mui-btn mui-btn-success mui-btn-outlined" style="width:80%;">下一步</button>
 			    </div>
 			</form>
 		</div>
-		<script src="">
-			
+		<script>
+			var time = 60;
+			var t = setInterval(function(){
+					time--;
+					document.getElementById('resendTime').innerHTML=time;
+					if(time<=0){
+						time=60;
+						document.getElementById('resendTime').innerHTML=`<a>重新获取</a>`;
+						clearInterval(t);
+					}
+			},1000);
+			document.getElementById('validation_form').onsubmit=function(){
+				var btn = document.getElementById('validation_btn');
+				mui(btn).button('loading');
+				var code = document.getElementById('code').value; 
+				if(code == ''){
+					mui.toast('请输入验证码');
+					mui(btn).button('reset');
+					return false;
+				}
+				mui.ajax('http://192.168.137.1/api/registered/validation',{
+					data:{
+						mobile:to,
+						uuid:plus.device.uuid,
+						password:password,
+						code:code
+					},
+					dataType:'json',//服务器返回json格式数据
+					type:'post',//HTTP请求类型
+					timeout:10000,//超时时间设置为10秒；	              
+					success:function(data){
+						//服务器返回响应，根据响应结果，分析是否登录成功；
+						if(data.status){
+//							clicked('validation.html');
+							alert(data.message);
+						}else{
+							mui.toast(data.message);
+						}
+						mui(btn).button('reset');
+					},
+					error:function(xhr,type,errorThrown){
+						//异常处理；
+//						console.log();
+						mui.toast('注册失败请稍后尝试');
+						mui(btn).button('reset');
+					}
+				});
+				return false;
+			}
+			document.addEventListener('plusready',function(){
+				var self = plus.webview.currentWebview();
+				password = self.password;
+				to = self.to;
+//				console.log(to);
+			},false);
 		</script>
 	</body>
 

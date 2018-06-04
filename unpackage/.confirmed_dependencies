@@ -1,13 +1,18 @@
 {
-  "index.html": {
-    "refer": [
-      "page/registered.html"
-    ]
-  },
-  "page/registered.html": {
-    "refer": [
-      "page/registered.html",
-      "page/validation.html"
-    ]
-  }
+	"index.html": {
+		"refer": [
+			"page/registered.html"
+		]
+	},
+	"page/registered.html": {
+		"refer": [
+			"page/registered.html",
+			"page/validation.html"
+		]
+	},
+	"page/validation.html": {
+		"refer": [
+			"page/validation.html"
+		]
+	}
 }
